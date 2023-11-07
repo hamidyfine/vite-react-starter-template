@@ -13,7 +13,6 @@ module.exports = {
             jsx: true,
         },
     },
-    // ignorePatterns: ['./index.html', './package.json', './README.md', './yarn.lock'],
     plugins: [
         '@typescript-eslint',
         'eslint-plugin-tsdoc',
