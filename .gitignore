@@ -265,4 +265,8 @@ sketch
 .history
 .ionide
 
+# Temp Folders
+.temp
+.bu-*
+
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,test,node,react,dotenv
