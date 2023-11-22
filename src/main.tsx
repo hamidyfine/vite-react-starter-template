@@ -9,6 +9,7 @@ import { Provider as StoreProvider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { routes, theme } from './configs';
+import { IntlProvider } from './providers';
 import { store } from './stores';
 
 const router = createBrowserRouter(routes);
@@ -20,7 +21,9 @@ createRoot(root).render(
     <StrictMode>
         <StoreProvider store={store}>
             <MantineProvider theme={theme}>
-                <RouterProvider router={router} />
+                <IntlProvider>
+                    <RouterProvider router={router} />
+                </IntlProvider>
             </MantineProvider>
         </StoreProvider>
     </StrictMode>,

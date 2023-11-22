@@ -1,6 +1,15 @@
+import { FormattedMessage } from 'react-intl';
+
+import { IntlSwitcher } from '../../components/intl-switcher';
+
 const Home = () => (
     <div>
-        <h1>Hello World</h1>
+        <IntlSwitcher />
+        <hr />
+        <FormattedMessage
+            defaultMessage="Hello, World!!!!! default"
+            id="hello-world"
+        />
     </div>
 );
 
