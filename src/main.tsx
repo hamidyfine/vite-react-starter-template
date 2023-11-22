@@ -5,9 +5,11 @@ import './main.scss';
 import { MantineProvider } from '@mantine/core';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { Provider as StoreProvider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { routes, theme } from './configs';
+import { store } from './stores';
 
 const router = createBrowserRouter(routes);
 
@@ -16,8 +18,10 @@ const root = document.getElementById('root')!;
 
 createRoot(root).render(
     <StrictMode>
-        <MantineProvider theme={theme}>
-            <RouterProvider router={router} />
-        </MantineProvider>
+        <StoreProvider store={store}>
+            <MantineProvider theme={theme}>
+                <RouterProvider router={router} />
+            </MantineProvider>
+        </StoreProvider>
     </StrictMode>,
 );
