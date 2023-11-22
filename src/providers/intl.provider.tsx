@@ -7,6 +7,10 @@ import { intlContext } from '../context';
 const IntlProvider = ({ children }: PropsWithChildren<unknown>) => {
     const [activeLocale, setActiveLocale] = useState(localStorage.getItem('locale') || default_locale);
 
+    if (!localStorage.getItem('locale')) {
+        localStorage.setItem('locale', default_locale);
+    }
+
     const changeLocale = (newLocale: string) => {
         if (locales.includes(newLocale)) {
             setActiveLocale(newLocale);
