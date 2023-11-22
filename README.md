@@ -2,6 +2,11 @@
 
 Welcome to the *Vite + React Starter Kit!* This repository provides you with a solid foundation for developing web applications using React, along with a selection of popular tools and libraries to enhance your development workflow. It follows best practices for folder structure, ensuring a clean and organized codebase.
 
+## TODOs
+- [ ] Update README.md
+- [ ] Developing exclusive CLI to work with this kit
+- [ ] Add more features!
+
 ## Features
 
 - **Vite**: A fast and lightweight development server that optimizes your React applications for better performance.
