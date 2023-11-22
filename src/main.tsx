@@ -1,10 +1,13 @@
+import '@fontsource-variable/sofia-sans';
+import '@mantine/core/styles.css';
 import './main.scss';
 
+import { MantineProvider } from '@mantine/core';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { routes } from './configs';
+import { routes, theme } from './configs';
 
 const router = createBrowserRouter(routes);
 
@@ -13,6 +16,8 @@ const root = document.getElementById('root')!;
 
 createRoot(root).render(
     <StrictMode>
-        <RouterProvider router={router} />
+        <MantineProvider theme={theme}>
+            <RouterProvider router={router} />
+        </MantineProvider>
     </StrictMode>,
 );
