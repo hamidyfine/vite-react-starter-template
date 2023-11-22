@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
-import { locales } from '../../locales';
-import { intlContext } from '../../providers';
+import { locales } from '../../configs';
+import { intlContext } from '../../context';
 
 const LanguageSwitcher = () => {
     const { locale, changeLocale } = useContext(intlContext);

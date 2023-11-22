@@ -1,9 +1,8 @@
-import { createContext, PropsWithChildren, useState } from 'react';
+import { PropsWithChildren, useState } from 'react';
 import { IntlProvider as Provider } from 'react-intl';
 
-import { default_locale, locales, messages } from '../locales';
-
-const intlContext = createContext<{locale?: string; changeLocale?: (locale: string) => void}>({});
+import { default_locale, locales, messages } from '../configs';
+import { intlContext } from '../context';
 
 const IntlProvider = ({ children }: PropsWithChildren<unknown>) => {
     const [activeLocale, setActiveLocale] = useState(localStorage.getItem('locale') || default_locale);
@@ -27,7 +26,5 @@ const IntlProvider = ({ children }: PropsWithChildren<unknown>) => {
 };
 
 export {
-    // eslint-disable-next-line react-refresh/only-export-components
-    intlContext,
     IntlProvider,
 };

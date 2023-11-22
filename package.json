@@ -19,6 +19,7 @@
     "@mantine/hooks": "^7.2.2",
     "@reduxjs/toolkit": "^1.9.7",
     "@tabler/icons-react": "^2.42.0",
+    "flat": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.5.5",

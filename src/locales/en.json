@@ -1,3 +1,6 @@
 {
-    "hello-world": "Hello World! from locale"
+    "hello-world": "Hello World!",
+    "page": {
+        "home": "home"
+    }
 }
