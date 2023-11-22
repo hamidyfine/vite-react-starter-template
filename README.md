@@ -4,7 +4,8 @@ Welcome to the *Vite + React Starter Kit!* This repository provides you with a s
 
 ## TODOs
 - [ ] Update README.md
-- [ ] Developing exclusive CLI to work with this kit
+- [ ] Develop exclusive CLI to work with this kit
+- [ ] Develop Home Page
 - [ ] Add more features!
 
 ## Features
