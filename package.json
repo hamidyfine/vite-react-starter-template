@@ -3,6 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Hamid Yaftian",
+    "email": "hamid.yaftian@gmail.com",
+    "url": "https://github.com/hamidyfine"
+  },
   "scripts": {
     "dev": "vite --port 4000 --open",
     "build": "tsc && vite build",
