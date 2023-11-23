@@ -8,7 +8,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider as StoreProvider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { routes, theme } from './configs';
+import { project, routes, theme } from './configs';
 import { IntlProvider } from './providers';
 import { store } from './stores';
 
@@ -20,7 +20,10 @@ const root = document.getElementById('root')!;
 createRoot(root).render(
     <StrictMode>
         <StoreProvider store={store}>
-            <MantineProvider theme={theme}>
+            <MantineProvider
+                defaultColorScheme={project.app.theme}
+                theme={theme}
+            >
                 <IntlProvider>
                     <RouterProvider router={router} />
                 </IntlProvider>
