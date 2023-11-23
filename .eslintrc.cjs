@@ -51,7 +51,7 @@ module.exports = {
         },
     },
     rules: {
-        'arrow-body-style': ['error', 'as-needed'],
+        'arrow-body-style': ['off', 'as-needed'],
         'arrow-parens': 'off',
         'class-methods-use-this': 'off',
         'comma-dangle': ['error', 'always-multiline'],
