@@ -1582,6 +1582,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource-variable/sofia-sans/-/sofia-sans-5.0.14.tgz#47123cd1f9a6a72d42bc85e4eccf368e50388408"
   integrity sha512-vUod0QTEwAxQMj8r4H0CnOrN5DG6Amo/NfKuN3Mnk8pr2qnz45c3w4c6Cctn18JlHwKq1D8fnElc/CXy2HUIZA==
 
+"@fontsource/roboto@^5.0.13":
+  version "5.0.13"
+  resolved "https://registry.yarnpkg.com/@fontsource/roboto/-/roboto-5.0.13.tgz#2d6ec431a2f9dfe38ca76525c2d6bf12241f575b"
+  integrity sha512-j61DHjsdUCKMXSdNLTOxcG701FWnF0jcqNNQi2iPCDxU8seN/sMxeh62dC++UiagCWq9ghTypX+Pcy7kX+QOeQ==
+
 "@formatjs/ecma402-abstract@2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-2.0.0.tgz#39197ab90b1c78b7342b129a56a7acdb8f512e17"
