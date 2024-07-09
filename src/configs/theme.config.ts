@@ -1,17 +1,27 @@
 import type { MantineThemeOverride } from '@mantine/core';
+import { createTheme, DEFAULT_THEME, mergeMantineTheme, px } from '@mantine/core';
 
-const tokens = {
-    font_family: 'Sofia Sans Variable, sans-serif',
-} as const;
+const locale = localStorage.getItem('locale');
 
-const theme: MantineThemeOverride = {
-    fontFamily: tokens.font_family,
+const font = locale === 'fa' ? 'Vazirmatn' : 'Roboto, sans-serif';
+
+const theme_override: MantineThemeOverride = {
+    fontFamily: font,
     headings: {
-        fontFamily: tokens.font_family,
+        fontFamily: font,
     },
 };
 
+const themeOverride = createTheme(theme_override);
+
+const theme = mergeMantineTheme(DEFAULT_THEME, themeOverride);
+
+const breakpoints: Record<string, number> = {};
+Object.keys(theme.breakpoints).forEach((bp: string) => {
+    breakpoints[bp] = Number(px(theme.breakpoints[bp]));
+});
+
 export {
+    breakpoints,
     theme,
-    tokens,
 };

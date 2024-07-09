@@ -2,17 +2,14 @@ import '@fontsource-variable/sofia-sans';
 import '@mantine/core/styles.css';
 import './main.scss';
 
-import { MantineProvider } from '@mantine/core';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider as StoreProvider } from 'react-redux';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { project, routes, theme } from './configs';
-import { IntlProvider } from './providers';
+import { theme } from './configs';
+import { IntlProvider, RouteProvider, ThemeProvider } from './providers';
 import { store } from './stores';
 
-const router = createBrowserRouter(routes);
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const root = document.getElementById('root')!;
@@ -20,14 +17,11 @@ const root = document.getElementById('root')!;
 createRoot(root).render(
     <StrictMode>
         <StoreProvider store={store}>
-            <MantineProvider
-                defaultColorScheme={project.app.theme}
-                theme={theme}
-            >
-                <IntlProvider>
-                    <RouterProvider router={router} />
-                </IntlProvider>
-            </MantineProvider>
+            <IntlProvider>
+                <ThemeProvider theme={theme}>
+                    <RouteProvider />
+                </ThemeProvider>
+            </IntlProvider>
         </StoreProvider>
     </StrictMode>,
 );

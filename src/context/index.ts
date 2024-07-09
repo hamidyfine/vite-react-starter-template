@@ -1,3 +1,3 @@
 import { createContext } from 'react';
 
-export const intlContext = createContext<{locale?: string; changeLocale?: (locale: string) => void}>({});
+export const intlContext = createContext<{changeLocale?: (locale: string) => void; locale?: string}>({});

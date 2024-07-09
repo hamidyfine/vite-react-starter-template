@@ -1,21 +1,30 @@
-import { IntlSwitcher, Trans } from '../../components';
+import { Box, Flex } from '@mantine/core';
 
-const Home = () => {
-    return (
-        <div>
-            <IntlSwitcher />
-            <hr />
-            <Trans
-                alias="hello-world"
-                fallback="d one"
-            />
-            <hr />
-            <Trans
-                alias="page.home"
-                fallback="d two"
-            />
-        </div>
-    );
-};
+import { Trans } from '../../components';
+
+const Home = () => (
+    <Box
+        style={{
+            height: '100vh',
+            width: '100%',
+        }}
+    >
+        <Flex
+            align="center"
+            direction="column"
+            justify="center"
+            style={{
+                height: '100%',
+            }}
+        >
+            <h1>
+                <Trans
+                    fallback="Starter Kit"
+                    id="title.app"
+                />
+            </h1>
+        </Flex>
+    </Box>
+);
 
 export default Home;

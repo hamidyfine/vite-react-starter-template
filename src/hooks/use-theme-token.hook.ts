@@ -1,24 +1,33 @@
+import { MantineTheme, useMantineTheme } from '@mantine/core';
 import { useEffect, useState } from 'react';
 
-import { tokens } from '../configs';
-
-export const useThemeToken = (key: string) => {
-    const [value, setValue] = useState<string | null>();
+export const useThemeToken = (key?: keyof MantineTheme) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const [value, setValue] = useState<any>();
     const [error, setError] = useState<string | null>();
+    const tokens = useMantineTheme();
 
     useEffect(() => {
         if (key) {
             const token = tokens[key as keyof typeof tokens];
-            if (token) {
+            // eslint-disable-next-line no-extra-boolean-cast
+            if (!!token) {
                 setValue(token);
             } else {
                 setError(`Token with key ${key} not found`);
             }
         }
-    }, [key]);
+    }, [key, tokens]);
+
+    if (!key) {
+        return {
+            tokens,
+        };
+    }
 
     return {
-        value,
         error,
+        tokens,
+        value,
     };
 };

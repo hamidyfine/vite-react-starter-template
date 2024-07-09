@@ -1,35 +1,30 @@
+import { NativeSelect } from '@mantine/core';
 import { useContext } from 'react';
 
-import { locales } from '../../configs';
+import { app } from '../../configs';
 import { intlContext } from '../../context';
 
-const LanguageSwitcher = () => {
-    const { locale, changeLocale } = useContext(intlContext);
+const IntlSwitcher = () => {
+    const { changeLocale, locale } = useContext(intlContext);
 
-    const handleChangeLanguage = (newLocale: string) => {
+    const locales_options = app.locales.map((locale) => ({
+        label: locale.title,
+        value: locale.locale,
+    }));
+
+    const handleChangeLocale = (newLocale: string) => {
         localStorage.setItem('locale', newLocale);
         changeLocale?.(newLocale);
     };
 
     return (
-        <div>
-            <label htmlFor="languageSelect">Select Language: </label>
-            <select
-                id="languageSelect"
-                value={locale}
-                onChange={(e) => handleChangeLanguage(e.target.value)}
-            >
-                {locales.map((loc) => (
-                    <option
-                        key={loc}
-                        value={loc}
-                    >
-                        {loc}
-                    </option>
-                ))}
-            </select>
-        </div>
+        <NativeSelect
+            data={locales_options}
+            size="xs"
+            value={locale}
+            onChange={(e) => handleChangeLocale(e.target.value)}
+        />
     );
 };
 
-export default LanguageSwitcher;
+export default IntlSwitcher;
