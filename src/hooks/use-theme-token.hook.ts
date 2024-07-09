@@ -18,7 +18,7 @@ export const useThemeToken = (key: string) => {
     }, [key]);
 
     return {
-        value,
         error,
+        value,
     };
 };

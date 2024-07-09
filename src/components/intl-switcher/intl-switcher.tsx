@@ -4,7 +4,7 @@ import { locales } from '../../configs';
 import { intlContext } from '../../context';
 
 const LanguageSwitcher = () => {
-    const { locale, changeLocale } = useContext(intlContext);
+    const { changeLocale, locale } = useContext(intlContext);
 
     const handleChangeLanguage = (newLocale: string) => {
         localStorage.setItem('locale', newLocale);

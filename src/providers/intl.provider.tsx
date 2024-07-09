@@ -18,7 +18,7 @@ const IntlProvider = ({ children }: PropsWithChildren<unknown>) => {
     };
 
     return (
-        <intlContext.Provider value={{ locale: activeLocale, changeLocale }}>
+        <intlContext.Provider value={{ changeLocale, locale: activeLocale }}>
             <Provider
                 locale={activeLocale}
                 messages={messages[activeLocale as keyof typeof messages]}

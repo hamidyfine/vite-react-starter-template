@@ -5,11 +5,10 @@ import * as Layout from '../layouts';
 
 export const routes: RouteObject[] = [
     {
-        element: createElement(Layout.DefaultLayout),
         children: [
             {
-                path: '/',
                 element: createElement(lazy(() => import(/*webpackChunkName: "home" */ '../views/home'))),
+                path: '/',
             },
             // {
             //     element: createElement(Layout.DefaultLayout),
@@ -21,5 +20,6 @@ export const routes: RouteObject[] = [
             //     ],
             // },
         ],
+        element: createElement(Layout.DefaultLayout),
     },
 ];

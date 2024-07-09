@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const workspaceStore = createSlice({
-    name: 'workspace',
-
     initialState: {
         name: 'Workspace Name',
     },
+
+    name: 'workspace',
 
     reducers: {
         setName: (state, action) => {

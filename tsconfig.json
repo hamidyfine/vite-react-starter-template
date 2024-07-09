@@ -25,10 +25,10 @@
   "include": [
     "src",
     ".eslintrc.cjs",
-    "stylelint.config.cjs",
-    "vite.config.ts",
-    "tailwind.config.js",
-    "postcss.config.cjs"
+    ".cz-config.cjs",
+    "*.config.js",
+    "*.config.cjs",
+    "*.config.ts"
   ],
   "references": [
     {
