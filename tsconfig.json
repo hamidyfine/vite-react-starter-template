@@ -27,8 +27,7 @@
     ".eslintrc.cjs",
     ".cz-config.cjs",
     "*.config.js",
-    "*.config.cjs",
-    "*.config.ts"
+    "*.config.cjs"
   ],
   "references": [
     {
