@@ -8644,6 +8644,15 @@ varint@^6.0.0:
   resolved "https://registry.yarnpkg.com/varint/-/varint-6.0.0.tgz#9881eb0ce8feaea6512439d19ddf84bf551661d0"
   integrity sha512-cXEIW6cfr15lFv563k4GuVuW/fiwjknytD37jIOLSdSWuOI6WnO/oKwmP2FQTU2l01LP8/M5TSAJpzUaGe3uWg==
 
+vite-plugin-bundlesize@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-bundlesize/-/vite-plugin-bundlesize-0.1.0.tgz#2c3c6bfa908d1a43ae6f428826af07abbaa558f7"
+  integrity sha512-aaoVAijpSg7yFzveOX+KWul6QPk0YmuugGacSA4bnpErxoyXHAkGi02AEzx1qyt5AKMN8LG7bDLsYLW8mq2QUQ==
+  dependencies:
+    picomatch "^4.0.2"
+    strip-ansi "^7.1.0"
+    vlq "^2.0.4"
+
 vite@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/vite/-/vite-6.0.5.tgz#1d0fbdb3ffe61e944089abeddb7d2c509420acfd"
@@ -8654,6 +8663,11 @@ vite@^6.0.5:
     rollup "^4.23.0"
   optionalDependencies:
     fsevents "~2.3.3"
+
+vlq@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/vlq/-/vlq-2.0.4.tgz#6057b85729245b9829e3cc7755f95b228d4fe041"
+  integrity sha512-aodjPa2wPQFkra1G8CzJBTHXhgk3EVSwxSWXNPr1fgdFLUb8kvLV1iEb6rFgasIsjP82HWI6dsb5Io26DDnasA==
 
 vscode-json-languageservice@^4.1.6:
   version "4.2.1"

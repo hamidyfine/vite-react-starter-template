@@ -16,19 +16,19 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/App.tsx:16
 #: src/App.tsx:19
-msgid "tgb"
-msgstr "Edit <0>src/App.tsx</0> and save to test HMR"
+#~ msgid "tgb"
+#~ msgstr "Edit <0>src/App.tsx</0> and save to test HMR"
 
 #. js-lingui-explicit-id
 #: src/App.tsx:25
 #: src/App.tsx:31
-msgid "test"
-msgstr "New Trans to test watcher!"
+#~ msgid "test"
+#~ msgstr "New Trans to test watcher!"
 
 #: src/App.tsx:28
-msgid "Another New Trans to test watcher!"
-msgstr "Another New Trans to test watcher!"
+#~ msgid "Another New Trans to test watcher!"
+#~ msgstr "Another New Trans to test watcher!"
 
 #: src/App.tsx:25
-msgid "New Trans to test watcher!"
-msgstr "New Trans to test watcher!"
+#~ msgid "New Trans to test watcher!"
+#~ msgstr "New Trans to test watcher!"
