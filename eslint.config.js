@@ -1,4 +1,16 @@
+/* eslint-disable import/default */
+/* eslint-disable import/no-named-as-default-member */
+
+// Migrate built-in rules to @stylistic/js namespace
+/* eslint @stylistic/migrate/migrate-js: "error" */
+
+// Migrate `@typescript-eslint` rules to @stylistic/ts namespace
+/* eslint @stylistic/migrate/migrate-ts: "error" */
+
 import pluginJs from '@eslint/js';
+import stylisticPlugin from '@stylistic/eslint-plugin';
+import stylisticPluginMigrate from '@stylistic/eslint-plugin-migrate';
+import tsParser from '@typescript-eslint/parser';
 import importPlugin from 'eslint-plugin-import';
 import importNewlines from 'eslint-plugin-import-newlines';
 import jest from 'eslint-plugin-jest';
@@ -15,11 +27,11 @@ import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import sonarjs from 'eslint-plugin-sonarjs';
 import tsdoc from 'eslint-plugin-tsdoc';
 import globals from 'globals';
-import { configs } from 'typescript-eslint';
+import tseslint from 'typescript-eslint';
 
 export default [
     pluginJs.configs.recommended,
-    ...configs.strict,
+    ...tseslint.configs.recommended,
     importPlugin.flatConfigs.recommended,
     importPlugin.flatConfigs.typescript,
     reactPlugin.configs.flat.recommended,
@@ -35,6 +47,7 @@ export default [
                 ...globals.browser,
                 ...globals.node,
             },
+            parser: tsParser,
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true,
@@ -43,6 +56,8 @@ export default [
             sourceType: 'module',
         },
         plugins: {
+            '@stylistic': stylisticPlugin,
+            '@stylistic/migrate': stylisticPluginMigrate,
             'import-newlines': importNewlines,
             'jsdoc': jsdoc,
             'no-secrets': noSecret,
@@ -54,14 +69,31 @@ export default [
             'simple-import-sort': simpleImportSort,
             'sonarjs': sonarjs,
             'tsdoc': tsdoc,
+            'typescript-eslint': tseslint.plugin,
         },
         rules: {
             ...perfectionist.configs['recommended-alphabetical'].rules,
+            '@stylistic/arrow-parens': 'off',
+            '@stylistic/comma-dangle': ['error', 'always-multiline'],
+            '@stylistic/eol-last': ['error', 'always'],
+            '@stylistic/indent': ['error', 4],
+            '@stylistic/key-spacing': ['error'],
+            '@stylistic/linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+            '@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+            '@stylistic/max-len': ['error', { code: 256 }],
+            '@stylistic/member-delimiter-style': 'error',
+            '@stylistic/no-extra-semi': 'error',
+            '@stylistic/no-multiple-empty-lines': 'off',
+            '@stylistic/no-trailing-spaces': ['error', { ignoreComments: true, skipBlankLines: true }],
+            '@stylistic/padded-blocks': ['error', 'never'],
+            '@stylistic/quotes': ['error', 'single'],
+            '@stylistic/semi': 'error',
+            '@stylistic/semi-spacing': 'error',
+            '@stylistic/space-in-parens': 'off',
+            '@stylistic/type-generic-spacing': 'error',
+            '@stylistic/type-named-tuple-spacing': 'error',
             'arrow-body-style': ['off'],
-            'arrow-parens': 'off',
             'class-methods-use-this': 'off',
-            'comma-dangle': ['error', 'always-multiline'],
-            'eol-last': ['error', 'always'],
             'import-newlines/enforce': ['error', { items: 30, 'max-len': 240 }],
             'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
             'import/exports-last': 'error',
@@ -74,7 +106,6 @@ export default [
             'import/no-extraneous-dependencies': 'off',
             'import/no-named-as-default': 'off',
             'import/no-unresolved': 'off',
-            'indent': ['error', 4],
             'jsdoc/check-alignment': 'warn',
             'jsdoc/check-indentation': 'warn',
             'jsdoc/check-syntax': 'warn',
@@ -88,27 +119,19 @@ export default [
             'jsdoc/require-returns': 'off',
             'jsdoc/require-throws': 'error',
             'jsdoc/sort-tags': 'warn',
-            'key-spacing': ['error'],
-            'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
-            'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
-            'max-len': ['error', { code: 256 }],
             'newline-before-return': 'off',
             'no-alert': 'off',
             'no-console': process.env.NODE_ENV === 'production' ? ['error', { allow: ['warn', 'error'] }] : 'off',
             'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-            'no-multiple-empty-lines': 'off',
             'no-prototype-builtins': 'off',
             'no-secrets/no-secrets': 'error',
             'no-template-curly-in-string': 'error',
-            'no-trailing-spaces': ['error', { ignoreComments: true, skipBlankLines: true }],
             'no-underscore-dangle': 'off',
-            'padded-blocks': ['error', 'never'],
             'perfectionist/sort-imports': 'off',
             'perfectionist/sort-jsx-props': 'off',
             'perfectionist/sort-union-types': ['error', { ignoreCase: true, type: 'alphabetical' }],
             'prefer-arrow-callback': ['warn', { allowNamedFunctions: true }],
             'prefer-arrow-functions/prefer-arrow-functions': ['warn', { classPropertiesAllowed: true, disallowPrototype: true, returnStyle: 'unchanged' }],
-            'quotes': ['error', 'single'],
             'react-refresh/only-export-components': 'warn',
             'react/boolean-prop-naming': ['error', { rule: '^(is|has|should)_[a-z]+(_[a-z]+)*$' }],
             'react/button-has-type': 'error',
@@ -142,10 +165,8 @@ export default [
             'react/react-in-jsx-scope': 'off',
             'react/self-closing-comp': 'warn',
             'require-jsdoc': 'off',
-            'semi': 'error',
             'simple-import-sort/exports': 'warn',
             'simple-import-sort/imports': 'warn',
-            'space-in-parens': 'off',
             'tsdoc/syntax': 'warn',
             'typescript-eslint/no-non-null-assertion': 'off',
             'typescript-eslint/no-unnecessary-condition': 'off',
