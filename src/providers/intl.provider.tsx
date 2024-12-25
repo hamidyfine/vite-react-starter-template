@@ -10,10 +10,10 @@ i18n.load({
     en: enMessages,
 });
 
-// Activate Default Catalog
-i18n.activate('en');
+export const IntlProvider = ({ children, locale = 'en' }: PropsWithChildren<{ locale: string }>) => {
+    // Activate Catalog
+    i18n.activate(locale);
 
-export const IntlProvider = ({ children }: PropsWithChildren) => {
     return (
         <I18nProvider i18n={i18n}>
             {children}
