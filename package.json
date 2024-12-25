@@ -1,27 +1,42 @@
 {
-  "name": "vite-full-starter-kit",
+  "name": "vite-starter-kit",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Hamid Yaftian",
+    "email": "hamid.yaftian@gmail.com",
+    "url": "https://github.com/hamidyfine"
+  },
+  "repository": {
+    "url": "https://github.com/hamidyfine/vite-starter-kit"
+  },
   "scripts": {
     "dev": "vite --open --port 4005",
     "build": "tsc -b && vite build",
     "lint": "npm run lint:scripts && npm run lint:styles",
     "lint:scripts": "eslint . --report-unused-disable-directives --max-warnings 0 --fix",
     "lint:styles": "stylelint src/**/*.scss",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "commit": "cz",
+    "prepare": "husky",
+    "bundle-analyzer": "npx bundlesize",
+    "bundle-analyzer:visual": "npx vite-bundle-visualizer"
   },
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
     "@eslint/js": "^9.17.0",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "@typescript-eslint/eslint-plugin": "^8.18.2",
     "@typescript-eslint/parser": "^8.18.2",
     "@vitejs/plugin-react-swc": "^3.7.2",
+    "commitizen": "^4.3.1",
+    "cz-customizable": "^7.2.1",
     "eslint": "^9.17.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-import-resolver-typescript": "^3.7.0",
@@ -40,6 +55,8 @@
     "eslint-plugin-sonarjs": "^3.0.1",
     "eslint-plugin-tsdoc": "^0.4.0",
     "globals": "^15.14.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "postcss-html": "^1.7.0",
     "sass-embedded": "^1.83.0",
     "stylelint": "^16.9.0",
@@ -51,5 +68,24 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint:scripts"
+    ],
+    "*.{css,scss}": [
+      "npm run lint:styles"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-config.cjs"
+    }
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
