@@ -4,6 +4,7 @@ import importNewlines from 'eslint-plugin-import-newlines';
 import jest from 'eslint-plugin-jest';
 import jsdoc from 'eslint-plugin-jsdoc';
 import json from 'eslint-plugin-json';
+import pluginLingui from 'eslint-plugin-lingui';
 import noSecret from 'eslint-plugin-no-secrets';
 import perfectionist from 'eslint-plugin-perfectionist';
 import preferArrowFunction from 'eslint-plugin-prefer-arrow-functions';
@@ -23,6 +24,7 @@ export default [
     importPlugin.flatConfigs.typescript,
     reactPlugin.configs.flat.recommended,
     reactPlugin.configs.flat['jsx-runtime'],
+    pluginLingui.configs['flat/recommended'],
     {
         files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
         languageOptions: {
