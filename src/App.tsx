@@ -1,5 +1,5 @@
 import { Trans, TransMacro } from './components';
-import { useAppStores } from './stores/app.store';
+import { useAppStores } from './stores/global/global.store';
 
 const App = () => {
     const bears = useAppStores((state) => state.bears);

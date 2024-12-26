@@ -1,13 +1,13 @@
 import { create } from 'zustand';
 
-interface AppState {
+interface GlobalStore {
     bears: number;
     increasePopulation: () => void;
     removeAllBears: () => void;
     updateBears: (by: number) => void;
 }
 
-export const useAppStores = create<AppState>((set) => ({
+export const useStoreGlobal = create<GlobalStore>((set) => ({
     bears: 0,
     increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
     removeAllBears: () => set({ bears: 0 }),

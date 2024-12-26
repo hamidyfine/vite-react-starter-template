@@ -1,1 +1,1 @@
-export * from './intl.provider';
+export * from './intl';

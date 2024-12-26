@@ -3,7 +3,7 @@ import { I18nProvider } from '@lingui/react';
 import type { PropsWithChildren } from 'react';
 
 // Import Catalogs
-import { messages as enMessages } from '../locales/en/messages';
+import { messages as enMessages } from '../../locales/en/messages';
 
 export const IntlProvider = ({ children, locale = 'en' }: PropsWithChildren<{ locale?: string }>) => {
     // Inject Catalogs

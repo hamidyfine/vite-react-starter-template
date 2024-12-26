@@ -2,7 +2,7 @@ import { i18n } from '@lingui/core';
 
 import { renderWrapper, waitFor } from '@/tests';
 
-import { messages as enMessages } from '../locales/en/messages';
+import { messages as enMessages } from '../../locales/en/messages';
 import { IntlProvider } from './intl.provider';
 
 jest.mock('@lingui/core', () => {

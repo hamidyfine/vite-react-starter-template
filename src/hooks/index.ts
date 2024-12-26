@@ -1,1 +1,1 @@
-export * from './trans.hook';
+export * from './trans';

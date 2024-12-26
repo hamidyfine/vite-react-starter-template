@@ -1,6 +1,6 @@
 import { act, renderHook } from '@/tests';
 
-import { useAppStores } from './app.store';
+import { useAppStores } from './global.store';
 
 describe('useAppStores Zustand Store', () => {
     it('should initialize with 0 bears', () => {
