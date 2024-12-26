@@ -5,12 +5,12 @@ import type { PropsWithChildren } from 'react';
 // Import Catalogs
 import { messages as enMessages } from '../locales/en/messages';
 
-// Inject Catalogs
-i18n.load({
-    en: enMessages,
-});
-
 export const IntlProvider = ({ children, locale = 'en' }: PropsWithChildren<{ locale?: string }>) => {
+    // Inject Catalogs
+    i18n.load({
+        en: enMessages,
+    });
+
     // Activate Catalog
     i18n.activate(locale);
 

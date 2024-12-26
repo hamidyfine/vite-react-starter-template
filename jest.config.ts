@@ -1,7 +1,7 @@
 import type { JestConfigWithTsJest } from 'ts-jest';
 
 const jestConfig: JestConfigWithTsJest = {
-    collectCoverage: false,
+    collectCoverage: true,
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
     coverageDirectory: 'coverage',
     moduleDirectories: [
