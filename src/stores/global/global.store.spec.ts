@@ -1,15 +1,15 @@
 import { act, renderHook } from '@/tests';
 
-import { useAppStores } from './global.store';
+import { useStoreGlobal } from './global.store';
 
-describe('useAppStores Zustand Store', () => {
+describe('useStoreGlobal Zustand Store', () => {
     it('should initialize with 0 bears', () => {
-        const { result } = renderHook(() => useAppStores());
+        const { result } = renderHook(() => useStoreGlobal());
         expect(result.current.bears).toBe(0);
     });
 
     it('should increase the bear population by 1', () => {
-        const { result } = renderHook(() => useAppStores());
+        const { result } = renderHook(() => useStoreGlobal());
 
         act(() => {
             result.current.increasePopulation();
@@ -19,7 +19,7 @@ describe('useAppStores Zustand Store', () => {
     });
 
     it('should reset the bear population to 0', () => {
-        const { result } = renderHook(() => useAppStores());
+        const { result } = renderHook(() => useStoreGlobal());
 
         act(() => {
             result.current.increasePopulation();
@@ -31,7 +31,7 @@ describe('useAppStores Zustand Store', () => {
     });
 
     it('should update the bear population to a specific number', () => {
-        const { result } = renderHook(() => useAppStores());
+        const { result } = renderHook(() => useStoreGlobal());
 
         act(() => {
             result.current.updateBears(5);
@@ -41,7 +41,7 @@ describe('useAppStores Zustand Store', () => {
     });
 
     it('should handle multiple updates correctly', () => {
-        const { result } = renderHook(() => useAppStores());
+        const { result } = renderHook(() => useStoreGlobal());
 
         act(() => {
             result.current.updateBears(10);

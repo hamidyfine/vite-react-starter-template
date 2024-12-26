@@ -3,7 +3,6 @@ import { i18n } from '@lingui/core';
 import { renderWrapper, waitFor } from '@/tests';
 
 import { messages as enMessages } from '../../locales/en/messages';
-import { IntlProvider } from './intl.provider';
 
 jest.mock('@lingui/core', () => {
     const originalModule = jest.requireActual('@lingui/core');
@@ -19,6 +18,10 @@ jest.mock('@lingui/core', () => {
 });
 
 describe('IntlProvider Component', () => {
+    beforeEach(() => {
+        jest.spyOn(console, 'warn').mockImplementation(jest.fn());
+    });
+
     beforeAll(() => {
         i18n.load({ en: enMessages });
         i18n.activate('en');
@@ -26,9 +29,33 @@ describe('IntlProvider Component', () => {
 
     it('should activate the default locale (en) if none is provided', async () => {
         renderWrapper(
-            <IntlProvider>
-                <div>Default Locale</div>
-            </IntlProvider>,
+            <div>Default Locale</div>,
+        );
+
+        await waitFor(() => expect(i18n.activate).toHaveBeenCalledWith('en'));
+    });
+
+    it('should activate the default_locale (en) when no locale is provided', async () => {
+        renderWrapper(
+            <div>Default Locale</div>,
+        );
+
+        await waitFor(() => expect(i18n.activate).toHaveBeenCalledWith('en'));
+    });
+
+    it('should use the default locale if locale is explicitly undefined', async () => {
+        renderWrapper(
+            <div>Default Locale</div>,
+            { locale: undefined },
+        );
+
+        await waitFor(() => expect(i18n.activate).toHaveBeenCalledWith('en'));
+    });
+
+    it('should use the default locale if locale is an empty string', async () => {
+        renderWrapper(
+            <div>Empty Locale</div>,
+            { locale: '' },
         );
 
         await waitFor(() => expect(i18n.activate).toHaveBeenCalledWith('en'));
@@ -38,19 +65,19 @@ describe('IntlProvider Component', () => {
         const locale = 'en';
 
         renderWrapper(
-            <IntlProvider locale={locale}>
-                <div>Specific Locale</div>
-            </IntlProvider>,
+            <div>Specific Locale</div>,
+            { locale },
         );
 
         await waitFor(() => expect(i18n.activate).toHaveBeenCalledWith(locale));
     });
 
     it('should load the correct catalogs', async () => {
+        const locale = 'en';
+
         renderWrapper(
-            <IntlProvider locale="en">
-                <div>Catalog Test</div>
-            </IntlProvider>,
+            <div>Catalog Test</div>,
+            { locale },
         );
 
         await waitFor(() => expect(i18n.load).toHaveBeenCalledWith({ en: enMessages }));

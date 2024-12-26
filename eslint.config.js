@@ -10,6 +10,7 @@
 import pluginJs from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import stylisticPluginMigrate from '@stylistic/eslint-plugin-migrate';
+import pluginRouter from '@tanstack/eslint-plugin-router';
 import tsParser from '@typescript-eslint/parser';
 import importPlugin from 'eslint-plugin-import';
 import importNewlines from 'eslint-plugin-import-newlines';
@@ -37,6 +38,7 @@ export default [
     reactPlugin.configs.flat.recommended,
     reactPlugin.configs.flat['jsx-runtime'],
     pluginLingui.configs['flat/recommended'],
+    ...pluginRouter.configs['flat/recommended'],
     {
         files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
         languageOptions: {
@@ -184,17 +186,26 @@ export default [
         },
     },
     {
+        files: ['src/pages/**/*.tsx'],
+        rules: {
+            'import/exports-last': 'off',
+            'import/group-exports': 'off',
+            'prefer-arrow-functions/prefer-arrow-functions': 'off',
+            'react/function-component-definition': 'off',
+        },
+    },
+    {
         files: ['src/stores/*.ts', 'src/types/*.ts'],
         rules: {
-            'import/exports-last': ['off'],
-            'import/group-exports': ['off'],
+            'import/exports-last': 'off',
+            'import/group-exports': 'off',
         },
     },
     {
         files: ['webpack.config.js', 'webpack.config.*.js', '.cz-config.cjs', 'jest.setup.ts', 'postcss.config.js'],
         rules: {
-            '@typescript-eslint/no-require-imports': ['off'],
-            '@typescript-eslint/no-var-requires': ['off'],
+            '@typescript-eslint/no-require-imports': 'off',
+            '@typescript-eslint/no-var-requires': 'off',
         },
     },
     {

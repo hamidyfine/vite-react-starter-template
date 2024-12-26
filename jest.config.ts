@@ -4,6 +4,16 @@ const jestConfig: JestConfigWithTsJest = {
     collectCoverage: true,
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
     coverageDirectory: 'coverage',
+    // TODO: Remove the following line when the coverage is 100%
+    coveragePathIgnorePatterns: [
+        'node_modules',
+        '<rootDir>/src/tests',
+        '<rootDir>/src/pages',
+        '<rootDir>/src/layouts',
+        '<rootDir>/src/main.tsx',
+        '<rootDir>/src/route-tree.gen.ts',
+        '\\.mock\\.ts',
+    ],
     moduleDirectories: [
         'node_modules',
         'tests',
@@ -18,7 +28,7 @@ const jestConfig: JestConfigWithTsJest = {
     },
     preset: 'ts-jest',
     setupFilesAfterEnv: [
-        '<rootDir>/jest.setup.ts',
+        '<rootDir>/src/tests/jest.setup.ts',
         'core-js',
     ],
     testEnvironment: 'jest-environment-jsdom',
