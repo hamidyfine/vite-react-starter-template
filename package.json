@@ -1,7 +1,7 @@
 {
   "name": "vite-starter-kit",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "author": {
     "name": "Hamid Yaftian",
@@ -27,7 +27,8 @@
     "bundle-analyzer": "npx bundlesize",
     "bundle-analyzer:visual": "npx vite-bundle-visualizer",
     "test": "jest --passWithNoTests",
-    "test:watch": "jest --passWithNoTests --watch"
+    "test:watch": "jest --passWithNoTests --watch",
+    "push": "git push origin dev"
   },
   "resolutions": {
     "@swc/core": "1.7.26"
