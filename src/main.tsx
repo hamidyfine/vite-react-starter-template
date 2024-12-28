@@ -2,7 +2,7 @@ import { createRouter,RouterProvider } from '@tanstack/react-router';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { IntlProvider } from './providers';
+import { IntlProvider, ThemeProvider } from './providers';
 import { routeTree } from './route-tree.gen';
 
 const router = createRouter({
@@ -23,7 +23,9 @@ if (!rootElement.innerHTML) {
     root.render(
         <StrictMode>
             <IntlProvider locale="en">
-                <RouterProvider router={router} />
+                <ThemeProvider>
+                    <RouterProvider router={router} />
+                </ThemeProvider>
             </IntlProvider>
         </StrictMode>,
     );
