@@ -7,7 +7,7 @@ const jestConfig: JestConfigWithTsJest = {
     // TODO: Remove the following line when the coverage is 100%
     coveragePathIgnorePatterns: [
         'node_modules',
-        '<rootDir>/src/components/icon', // This component is not testable as it uses lazy loading for icons
+        '<rootDir>/src/components/trans',
         '<rootDir>/src/tests',
         '<rootDir>/src/pages',
         '<rootDir>/src/layouts',

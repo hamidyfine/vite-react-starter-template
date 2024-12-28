@@ -1,6 +1,7 @@
 import { msg } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
-import { renderHook } from '@testing-library/react';
+
+import { renderHook } from '@/tests';
 
 import { useTrans } from './trans.hook';
 
