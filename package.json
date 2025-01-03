@@ -9,7 +9,7 @@
     "url": "https://github.com/hamidyfine"
   },
   "repository": {
-    "url": "https://github.com/hamidyfine/vite-starter-kit"
+    "url": "https://github.com/hamidyfine/vite-react-starter-kit"
   },
   "scripts": {
     "dev": "concurrently --kill-others \"npm run locale:extract:watch\" \"npm run locale:compile:watch\" \"vite --open --port 4005\"",
