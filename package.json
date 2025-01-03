@@ -28,7 +28,7 @@
     "bundle-analyzer:visual": "npx vite-bundle-visualizer",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --passWithNoTests --watch",
-    "release": "release-it"
+    "release": "npm run lint && npm run test && release-it"
   },
   "resolutions": {
     "@swc/core": "1.7.26"
