@@ -10,6 +10,7 @@
 import pluginJs from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import stylisticPluginMigrate from '@stylistic/eslint-plugin-migrate';
+import pluginQuery from '@tanstack/eslint-plugin-query';
 import pluginRouter from '@tanstack/eslint-plugin-router';
 import tsParser from '@typescript-eslint/parser';
 import importPlugin from 'eslint-plugin-import';
@@ -39,6 +40,7 @@ export default [
     reactPlugin.configs.flat['jsx-runtime'],
     pluginLingui.configs['flat/recommended'],
     ...pluginRouter.configs['flat/recommended'],
+    ...pluginQuery.configs['flat/recommended'],
     {
         files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
         languageOptions: {
