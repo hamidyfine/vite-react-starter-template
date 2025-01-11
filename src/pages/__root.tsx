@@ -9,11 +9,7 @@ function RootComponent() {
     // It will be rendered on every page.
     // Uncomment this if you do NOT want to render any components (like the navigation links) on every page.
     // Remove the second return if uncomment this one.
-    // return (
-    //     <>
-    //         <Outlet />
-    //     </>
-    // );
+    // return <Outlet />;
 
     return (
         <>
