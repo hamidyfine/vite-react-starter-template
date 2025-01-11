@@ -12,10 +12,10 @@ import { createFileRoute } from '@tanstack/react-router';
 
 // Import Routes
 
-import { Route as rootRoute } from './pages/__root';
-import { Route as DashboardDashboardImport } from './pages/dashboard/_dashboard';
-import { Route as DashboardDashboardIndexImport } from './pages/dashboard/_dashboard/index';
-import { Route as DashboardDashboardProfileIndexImport } from './pages/dashboard/_dashboard/profile/index';
+import { Route as rootRoute } from './../pages/__root';
+import { Route as DashboardDashboardImport } from './../pages/dashboard/_dashboard';
+import { Route as DashboardDashboardIndexImport } from './../pages/dashboard/_dashboard/index';
+import { Route as DashboardDashboardProfileIndexImport } from './../pages/dashboard/_dashboard/profile/index';
 
 // Create Virtual Routes
 
@@ -35,13 +35,13 @@ const AboutLazyRoute = AboutLazyImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./pages/about.lazy').then((d) => d.Route));
+} as any).lazy(() => import('./../pages/about.lazy').then((d) => d.Route));
 
 const IndexLazyRoute = IndexLazyImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./pages/index.lazy').then((d) => d.Route));
+} as any).lazy(() => import('./../pages/index.lazy').then((d) => d.Route));
 
 const DashboardDashboardRoute = DashboardDashboardImport.update({
   id: '/_dashboard',

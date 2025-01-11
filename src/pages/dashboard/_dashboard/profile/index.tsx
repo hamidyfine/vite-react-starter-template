@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute } from '@/router';
 
 export const Route = createFileRoute('/dashboard/_dashboard/profile/')({
     component: Profile,

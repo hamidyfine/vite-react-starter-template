@@ -1,4 +1,4 @@
-import { createFileRoute, Outlet } from '@tanstack/react-router';
+import { createFileRoute, Outlet } from '@/router';
 
 export const Route = createFileRoute('/dashboard/_dashboard')({
     component: LayoutDefault,

@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute } from '@/router';
 
 import { Trans, TransMacro } from '../../../components';
 import { useStoreGlobal } from '../../../stores';

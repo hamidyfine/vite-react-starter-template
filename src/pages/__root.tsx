@@ -1,11 +1,20 @@
-import { createRootRoute,Link, Outlet } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+import { createRootRoute, Link, Outlet } from '@/router';
 
 export const Route = createRootRoute({
     component: RootComponent,
 });
 
 function RootComponent() {
+    // This is the root component for the application.
+    // It will be rendered on every page.
+    // Uncomment this if you do NOT want to render any components (like the navigation links) on every page.
+    // Remove the second return if uncomment this one.
+    // return (
+    //     <>
+    //         <Outlet />
+    //     </>
+    // );
+
     return (
         <>
             <div className="p-2 flex gap-2 text-lg">
@@ -45,7 +54,6 @@ function RootComponent() {
             </div>
             <hr />
             <Outlet />
-            <TanStackRouterDevtools position="bottom-right" />
         </>
     );
 }
