@@ -1,5 +1,6 @@
 {
-  "name": "vite-starter-kit",
+  "name": "react-starter-kit",
+  "description": "React Starter Template with Vite, TypeScript, Lingui, Jest, Testing-Library, and ESLint. A streamlined setup with best practices for folder structure and configuration. Ideal for scalable React apps",
   "private": true,
   "version": "2.1.1",
   "type": "module",
@@ -9,7 +10,7 @@
     "url": "https://github.com/hamidyfine"
   },
   "repository": {
-    "url": "https://github.com/hamidyfine/vite-react-starter-kit"
+    "url": "https://github.com/hamidyfine/react-starter-kit"
   },
   "scripts": {
     "dev": "concurrently --kill-others \"npm run locale:extract:watch\" \"npm run locale:compile:watch\" \"vite --open --port 4005\"",
